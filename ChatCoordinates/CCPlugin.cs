@@ -54,13 +54,13 @@ namespace ChatCoordinates
             CommandManager.AddHandler("/coord", new CommandInfo(OnCoordinateCommand)
             {
                 HelpMessage =
-                    $"/coord <x> <y> [{Configuration.ZoneDelimiter} <partial zone name>] -- Places map marker at given coordinates"
+                    $"/coord <x> <y> [{Configuration.ZoneDelimiter} <部分地區名稱>]──在指定座標設定地圖旗標"
             });
 
             CommandManager.AddHandler("/ctp", new CommandInfo(OnCoordinateTeleportCommand)
             {
                 HelpMessage =
-                    $"/ctp <x> <y> [{Configuration.ZoneDelimiter} <partial zone name>] -- Places map marker and teleports to closest aetheryte"
+                    $"/ctp <x> <y> [{Configuration.ZoneDelimiter} <部分地區名稱>]──設定地圖旗標並傳送至最近的傳送網"
             });
         }
 
@@ -84,7 +84,7 @@ namespace ChatCoordinates
             if (ClientState.TerritoryType == 0)
             {
                 PrintChat(
-                    "Unable to get territory info. Please switch zone to initialize plugin.");
+                    "無法取得地區資訊，請切換地區以初始化插件。");
                 return null;
             }
 
@@ -112,19 +112,19 @@ namespace ChatCoordinates
             {
                 case "/coord":
                     PrintChat(
-                        $"Places a map marker at given coordinates. {Configuration.ZoneDelimiter} can be used a delimiter to place marker at given zone. Placed marker can be shared by typing <flag>.");
-                    PrintChat($"/coord <x> <y> [{Configuration.ZoneDelimiter} <zone>]");
+                        $"在指定座標設定地圖旗標。可使用 {Configuration.ZoneDelimiter} 分隔符號指定地區；輸入 <flag> 即可分享旗標。");
+                    PrintChat($"/coord <x> <y> [{Configuration.ZoneDelimiter} <地區>]");
                     PrintChat($"/coord 8.8 11.5");
                     PrintChat("/coord 8.8,11.5");
-                    PrintChat("/coord X: 10.7 Y: 11.7 : Lakeland");
-                    PrintChat("/coord 10.7 11.7 : Lakeland");
+                    PrintChat("/coord X: 10.7 Y: 11.7 : 雷克蘭德");
+                    PrintChat("/coord 10.7 11.7 : 雷克蘭德");
                     break;
                 case "/ctp":
                     PrintChat(
-                        $"Places a map marker at given coordinate and teleports to the closest aetheryte. {Configuration.ZoneDelimiter} is used as delimiter for zone.");
-                    PrintChat("/ctp 10.7 11.7 : Lakeland");
-                    PrintChat("/ctp 10.7 11.7 : Lakeland");
-                    PrintChat("/ctp X: 10.7 Y: 11.7 : Lakeland");
+                        $"在指定座標設定地圖旗標，並傳送至最近的傳送網。使用 {Configuration.ZoneDelimiter} 分隔符號指定地區。");
+                    PrintChat("/ctp 10.7 11.7 : 雷克蘭德");
+                    PrintChat("/ctp 10.7 11.7 : 雷克蘭德");
+                    PrintChat("/ctp X: 10.7 Y: 11.7 : 雷克蘭德");
                     break;
             }
         }

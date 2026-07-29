@@ -23,10 +23,10 @@ namespace ChatCoordinates.Functions
             if (!coordinate.HasCoordinates()) return;
 
             if (coordinate.ZoneSpecified && coordinate.TerritoryDetail == null)
-                _plugin.PrintError($"No match found for {coordinate.Zone}.");
+                _plugin.PrintError($"找不到符合「{coordinate.Zone}」的地區。");
 
             if (coordinate.TerritoryDetail == null)
-                _plugin.PrintError("Failed to determine zone.");
+                _plugin.PrintError("無法判斷地區。");
 
             var mapLink = new MapLinkPayload(
                 coordinate.TerritoryDetail!.TerritoryType,

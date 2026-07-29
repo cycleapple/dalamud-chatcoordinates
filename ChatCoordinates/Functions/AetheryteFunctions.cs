@@ -29,13 +29,13 @@ namespace ChatCoordinates.Functions
                 }
                 else
                 {
-                    _plugin.PrintChat("Failed to find closest aetheryte.");
+                    _plugin.PrintChat("找不到最近的傳送網。");
                 }
             }
             else
             {
                 _plugin.PrintError(
-                    "Teleporting requires Teleporter plugin to be installed.");
+                    "傳送功能需要安裝 Teleporter 插件。");
             }
         }
     }

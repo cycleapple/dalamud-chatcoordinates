@@ -41,9 +41,9 @@ namespace ChatCoordinates.Configuration
             ImGui.SetNextWindowSize(new Vector2(320, 320), ImGuiCond.FirstUseEver);
             ImGui.SetNextWindowSizeConstraints(new Vector2(320, 320), new Vector2(float.MaxValue, float.MaxValue));
 
-            if (ImGui.Begin($"{_plugin.Name} - Settings", ref _visible))
+            if (ImGui.Begin($"{_plugin.Name}－設定", ref _visible))
             {
-                ImGui.Text("Zone Delimiter");
+                ImGui.Text("地區分隔符號");
                 if (ImGui.InputText("##CoordZone", ref zoneDelimiter, 10))
                 {
                     if (!string.IsNullOrWhiteSpace(zoneDelimiter))
@@ -53,11 +53,11 @@ namespace ChatCoordinates.Configuration
                 }
 
                 ImGui.TextColored(ImGuiColors.DalamudGrey,
-                    "Delimiter used to determine zone.");
+                    "用來判斷指定地區的分隔符號。");
 
                 ImGui.Spacing();
 
-                ImGui.TextUnformatted("General Chat Channel");
+                ImGui.TextUnformatted("一般訊息頻道");
 
                 if (ImGui.BeginCombo("##CoordChat", _plugin.Configuration.GeneralChatType.ToString()))
                 {
@@ -71,11 +71,11 @@ namespace ChatCoordinates.Configuration
                 }
 
                 ImGui.TextColored(ImGuiColors.DalamudGrey,
-                    "Chat channel to used to print messages from ChatCoordinates.");
+                    "ChatCoordinates 輸出一般訊息時使用的聊天頻道。");
 
                 ImGuiHelpers.ScaledDummy(5);
 
-                ImGui.TextUnformatted("Error Chat Channel");
+                ImGui.TextUnformatted("錯誤訊息頻道");
                 if (ImGui.BeginCombo("##CoordErr", _plugin.Configuration.ErrorChatType.ToString()))
                 {
                     foreach (var chatType in xivChatTypes.Where(chatType =>
@@ -88,7 +88,7 @@ namespace ChatCoordinates.Configuration
                 }
 
                 ImGui.TextColored(ImGuiColors.DalamudGrey,
-                    "Chat channel to used to print error messages from ChatCoordinates.");
+                    "ChatCoordinates 輸出錯誤訊息時使用的聊天頻道。");
 
                 ImGuiHelpers.ScaledDummy(5);
 
@@ -96,16 +96,16 @@ namespace ChatCoordinates.Configuration
                 ImGui.Spacing();
                 ImGui.TextColored(ImGuiColors.DPSRed, zoneDelimiter);
                 ImGui.SameLine();
-                ImGui.TextColored(ImGuiColors.DalamudGrey, "can be used a delimiter to place marker at given zone.");
-                ImGui.TextColored(ImGuiColors.DalamudGrey, "Placed marker can be shared by typing <flag>.");
-                ImGui.TextColored(ImGuiColors.DalamudGrey, "Examples:");
-                ImGui.TextColored(ImGuiColors.DalamudGrey, $"/coord <x> <y> [{zoneDelimiter} <zone>]");
+                ImGui.TextColored(ImGuiColors.DalamudGrey, "可作為分隔符號，在指定地區設定旗標。");
+                ImGui.TextColored(ImGuiColors.DalamudGrey, "輸入 <flag> 即可分享已設定的旗標。");
+                ImGui.TextColored(ImGuiColors.DalamudGrey, "範例：");
+                ImGui.TextColored(ImGuiColors.DalamudGrey, $"/coord <x> <y> [{zoneDelimiter} <地區>]");
                 ImGui.TextColored(ImGuiColors.DalamudGrey, $"/coord 8.8 11.5");
                 ImGui.TextColored(ImGuiColors.DalamudGrey, $"/coord 8.8,11.5");
-                ImGui.TextColored(ImGuiColors.DalamudGrey, $"/coord X: 10.7 Y: 11.7 : Lakeland");
-                ImGui.TextColored(ImGuiColors.DalamudGrey, $"/coord 10.7 11.7 : Lake");
+                ImGui.TextColored(ImGuiColors.DalamudGrey, $"/coord X: 10.7 Y: 11.7 : 雷克蘭德");
+                ImGui.TextColored(ImGuiColors.DalamudGrey, $"/coord 10.7 11.7 : 雷克");
 
-                if (ImGui.Button("Save and exit"))
+                if (ImGui.Button("儲存並關閉"))
                 {
                     _plugin.Configuration.Save();
                     Visible = false;
