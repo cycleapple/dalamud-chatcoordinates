@@ -2,15 +2,11 @@
     <PropertyGroup>
         <RootNamespace>ChatCoordinates</RootNamespace>
         <AssemblyName>ChatCoordinates</AssemblyName>
-        <Version>2.1.2.8</Version>
+        <Version>2.1.2.9</Version>
         <Authors>kij</Authors>
         <Product>ChatCoordinates</Product>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <Description>Place flag markers on map from chat command.</Description>
-        <PackageProjectUrl>https://github.com/kissorjeyabalan/dalamud-chatcoordinates</PackageProjectUrl>
+        <Description>透過聊天指令在地圖上設定旗標。</Description>
+        <PackageProjectUrl>https://github.com/cycleapple/dalamud-chatcoordinates/tree/api13-tw</PackageProjectUrl>
     </PropertyGroup>
-    
-    <ItemGroup>
-        <PackageReference Include="DalamudPackager" Version="13.0.0" />
-    </ItemGroup>
 </Project>

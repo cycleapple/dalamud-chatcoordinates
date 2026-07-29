@@ -1,10 +1,11 @@
 name: ChatCoordinates
 author: kij
-punchline: Places flag marker on map from coordinates in chat.
+punchline: 將聊天訊息中的座標設為地圖旗標。
 description: |-
-  Places flag marker on map from coordinates in chat.
-  Opens map with given coordinates for current or given zone.
-  See "/coord" for configuration and usage info.
+  將聊天訊息中的座標設為地圖旗標。
+  可在目前或指定地區開啟地圖並標示座標。
+  輸入「/coord」查看設定與使用說明。
+repo_url: https://github.com/cycleapple/dalamud-chatcoordinates/tree/api13-tw
 categoryTags:
   - utility
 tags:
